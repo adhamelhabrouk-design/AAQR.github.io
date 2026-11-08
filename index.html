@@ -3,38 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة البراند الذكية</title>
+    <title>موبايلي شوب - Mobily Shop</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f4f7f6; text-align: center; margin: 0; padding: 20px; }
-        .container { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .logo { width: 100px; height: 100px; border-radius: 50%; background: #ddd; margin: auto; display: flex; align-items: center; justify-content: center; font-weight: bold; }
-        h1 { font-size: 22px; color: #333; margin: 15px 0 5px 0; }
-        p { color: #666; font-size: 14px; margin-bottom: 25px; }
-        .btn { display: flex; align-items: center; justify-content: center; background: #007bff; color: white; text-decoration: none; padding: 12px; margin: 10px 0; border-radius: 8px; font-weight: bold; font-size: 16px; transition: 0.2s; }
-        .btn:hover { opacity: 0.9; }
-        .btn-google { background: #ea4335; }
-        .btn-instapay { background: #6f42c1; }
-        .btn-wallet { background: #28a745; }
-        .btn-whatsapp { background: #25d366; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f3f6; text-align: center; margin: 0; padding: 20px; }
+        .container { max-width: 420px; margin: 20px auto; background: white; padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .logo { width: 90px; height: 90px; border-radius: 50%; background: #007bff; color: white; margin: auto; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 24px; box-shadow: 0 4px 10px rgba(0,123,255,0.3); }
+        h1 { font-size: 24px; color: #222; margin: 20px 0 5px 0; font-weight: 700; }
+        p { color: #666; font-size: 14px; margin-bottom: 30px; }
+        .btn { display: flex; align-items: center; justify-content: center; background: #007bff; color: white; text-decoration: none; padding: 14px; margin: 12px 0; border-radius: 12px; font-weight: bold; font-size: 16px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .btn:active { transform: scale(0.98); }
+        .btn-google { background: #ea4335; box-shadow: 0 4px 12px rgba(234,67,53,0.2); }
+        .btn-facebook { background: #1877f2; box-shadow: 0 4px 12px rgba(24,119,242,0.2); }
+        .btn-instapay { background: #6f42c1; box-shadow: 0 4px 12px rgba(111,66,193,0.2); }
+        .btn-wallet { background: #28a745; box-shadow: 0 4px 12px rgba(40,167,69,0.2); }
+        .btn-whatsapp { background: #25d366; box-shadow: 0 4px 12px rgba(37,211,102,0.2); }
+        
+        /* نافذة منبثقة لعرض صور الدفع */
+        .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); align-items: center; justify-content: center; }
+        .modal-content { background-color: white; padding: 20px; border-radius: 15px; max-width: 90%; max-height: 80%; text-align: center; position: relative; }
+        .modal-content img { max-width: 100%; max-height: 350px; border-radius: 10px; }
+        .close-btn { background: #333; color: white; border: none; padding: 8px 16px; border-radius: 8px; margin-top: 15px; cursor: pointer; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="logo">لوجو البراند</div>
-    <h1>اسم المحل أو الشركة</h1>
-    <p>تابعنا، قيّمنا، أو ادفع بكل سهولة في خطوة واحدة</p>
+    <div class="logo">📱</div>
+    <h1>موبايلي شوب - Mobily Shop</h1>
+    <p>تواصل معنا، قيّمنا، أو ادفع بكل سهولة في خطوة واحدة</p>
 
-    <!-- روابط السوشيال ميديا والتقييم -->
-    <a href="رابط_جوجل_هنا" class="btn btn-google" target="_blank">⭐ قيّمنا على Google</a>
-    <a href="رابط_واتساب_هنا" class="btn btn-whatsapp" target="_blank">💬 تواصل عبر الواتساب</a>
-    <a href="رابط_فيسبوك_هنا" class="btn">🔵 صفحة الفيسبوك</a>
-    <a href="رابط_انستجرام_هنا" class="btn" style="background: #e1306c;">📸 حساب إنستجرام</a>
+    <!-- الروابط الحقيقية المستقرة -->
+    <a href="https://share.google/vo8j8NgjGDhL4wVqZ" class="btn btn-google" target="_blank">⭐ قيّمنا على Google</a>
+    <a href="https://wa.me" class="btn btn-whatsapp" target="_blank">💬 تواصل عبر الواتساب</a>
+    <a href="https://facebook.com" class="btn btn-facebook" target="_blank">🔵 صفحة الفيسبوك</a>
 
-    <!-- روابط الدفع -->
-    <a href="رابط_صورة_QR_انستاباي" class="btn btn-instapay" target="_blank">💸 الدفع عبر InstaPay</a>
-    <a href="رابط_صورة_ارقام_المحافظ" class="btn btn-wallet" target="_blank">📱 دفع كاش (المحافظ الإلكترونية)</a>
+    <!-- أزرار الدفع التفاعلية -->
+    <a href="#" class="btn btn-instapay" onclick="openModal('instapay-modal')">💸 الدفع عبر InstaPay</a>
+    <a href="#" class="btn btn-wallet" onclick="openModal('wallet-modal')">📱 دفع كاش (المحافظ الإلكترونية)</a>
 </div>
+
+<!-- نافذة إنستا باي -->
+<div id="instapay-modal" class="modal" onclick="closeModal('instapay-modal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <h3>امسح الـ QR للتحويل عبر InstaPay</h3>
+        <!-- استبدل الرابط أدناه برابط صورة الـ QR الخاصة بحسابك -->
+        <img src="https://placehold.co" alt="InstaPay QR">
+        <br><button class="close-btn" onclick="closeModal('instapay-modal')">إغلاق</button>
+    </div>
+</div>
+
+<!-- نافذة المحافظ الإلكترونية -->
+<div id="wallet-modal" class="modal" onclick="closeModal('wallet-modal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <h3>بيانات المحافظ الإلكترونية</h3>
+        <!-- استبدل الرابط أدناه برابط صورتك التي تحتوي على أرقام فودافون/اتصالات كاش -->
+        <img src="https://placehold.co" alt="Wallets Info">
+        <br><button class="close-btn" onclick="closeModal('wallet-modal')">إغلاق</button>
+    </div>
+</div>
+
+<script>
+    function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+</script>
 
 </body>
 </html>
